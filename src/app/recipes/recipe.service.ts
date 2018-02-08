@@ -13,16 +13,21 @@ export class RecipeService {
   private recipes: Recipe[] = [
     new Recipe('A Test Recipe',
       'This is simply a test',
-      'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
+      'http://www.wellandpizza.com/wp-content/uploads/2017/11/Lucianos-Pizzeria-Welland-Pizza5.jpg',
       [new Ingredient('Meat', 1),
       new Ingredient('French Fries', 20)]),
     new Recipe('Another Test Recipe', 'This is simply a test',
-      'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaZWqoJUGVyxYznBUlpA6SHVgNZMc8Ehq6_1VMfPfs5SAM8hl8FQ',
       [
         new Ingredient('Buns', 2),
         new Ingredient('Meat', 1)
       ])
   ];
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
 
   constructor(private slService: ShoppingListService) {
 
