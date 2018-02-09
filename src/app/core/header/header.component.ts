@@ -8,10 +8,7 @@ import {AuthService} from '../../auth/auth.service';
 })
 export class HeaderComponent {
 
-  @Output() featureSelected = new EventEmitter<string>();
-
-  constructor(private dataStorageService: DataStorageService,
-              private authService: AuthService) {}
+  constructor(private dataStorageService: DataStorageService, public authService: AuthService) {}
 
   onSaveData() {
     this.dataStorageService.storeRecipes().subscribe(

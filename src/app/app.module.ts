@@ -3,17 +3,13 @@ import {NgModule} from '@angular/core';
 import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
-import {ShoppingListService} from './shopping-list/shopping-list.service';
 import {AppRoutingModule} from './/app-routing.module';
-import {RecipeService} from './recipes/recipe.service';
-import {DataStorageService} from './shared/data-storage.service';
 import {HttpClientModule} from '@angular/common/http';
-import {AuthService} from './auth/auth.service';
-import {AuthGuardService} from './auth/auth-guard.service';
 import {SharedModule} from './shared/shared.module';
 import {ShoppingListModule} from './shopping-list/shoppinglist.module';
 import {AuthModule} from './auth/auth.module';
 import {CoreModule} from './core/core.module';
+import {AuthGuardService} from './auth/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +25,7 @@ import {CoreModule} from './core/core.module';
     AuthModule,
     CoreModule
   ],
-  providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuardService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
