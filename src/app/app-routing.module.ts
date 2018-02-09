@@ -8,9 +8,13 @@ import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
 import {SignupComponent} from './auth/signup/signup.component';
 import {SigninComponent} from './auth/signin/signin.component';
 import {AuthGuardService} from './auth/auth-guard.service';
+import {HomeComponent} from './home/home.component';
+import {RecipeModule} from './recipes/recipe.module';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/recipes', pathMatch: 'full'},
+  {path: '', component: HomeComponent},
+  {path: 'recipes', loadChildren: './recipes/recipe.module#RecipeModule'},
+  // {path: '', redirectTo: '/recipes', pathMatch: 'full'},
   {path: 'shopping-list', component: ShoppingListComponent}
 ];
 
